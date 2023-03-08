@@ -13,24 +13,24 @@ window_left=$(echo $window_pos | cut -d "," -f 1)
 window_top=$(echo $window_pos | cut -d "," -f 2)
 window_width=$(echo $window_geo | cut -d "x" -f 1)
 window_height=$(echo $window_geo | cut -d "x" -f 2)
-window_right=$(( window_left + window_width ))
-window_bottom=$(( window_top + window_width ))
-window_x=$(( (window_left + window_right) / 2 ))
-window_y=$(( (window_top + window_bottom) / 2 ))
+window_right=$(( $window_left + $window_width ))
+window_bottom=$(( $window_top + $window_height ))
+window_x=$(( ($window_left + $window_right) / 2 ))
+window_y=$(( ($window_top + $window_bottom) / 2 ))
 
 for display in $(xrandr | 
-                 grep " connected" | 
-                 sed "s:.* \([0-9]*\)x\([0-9]*\)+\([0-9]*\)+\([0-9]*\) .*:\1;\2;\3;\4:") 
+                 grep -o "[0-9]*x[0-9]*+[0-9]*+[0-9]*" | 
+                 sed "s:\([0-9]*\)x\([0-9]*\)+\([0-9]*\)+\([0-9]*\):\1;\2;\3;\4:") 
 do
   # sets all of the dimensions of the current monitor being handled
   display_width=$(echo $display | cut -d ";" -f 1)
   display_height=$(echo $display | cut -d ";" -f 2)
   display_left=$(echo $display | cut -d ";" -f 3)
   display_top=$(echo $display | cut -d ";" -f 4)
-  display_right=$(( display_left + display_width ))
-  display_bottom=$(( display_top + display_height ))
-  display_x=$(( (display_left + display_right) / 2 ))
-  display_y=$(( (display_top + display_bottom) / 2 ))
+  display_right=$(( $display_left + $display_width ))
+  display_bottom=$(( $display_top + $display_height ))
+  display_x=$(( ($display_left + $display_right) / 2 ))
+  display_y=$(( ($display_top + $display_bottom) / 2 ))
 
   # tests to see if the window in in the current display
   if [[ $window_x -ge $display_left ]] &&
@@ -39,10 +39,10 @@ do
      [[ $window_y -le $display_bottom ]] 
   then
     # centers the window to the current display
-    new_window_x=$(( display_x - (window_width / 2) ))
-    new_window_y=$(( display_y - (window_height / 2) ))
+    new_window_x=$(( $display_x - ($window_width / 2) ))
+    new_window_y=$(( $display_y - ($window_height / 2) ))
 
-    xdotool getactivewindow windowmove $new_window_x $new_window_y
+    xdotool getactivewindow windowmove "$new_window_x" "$new_window_y"
     exit 0
   fi
 done
