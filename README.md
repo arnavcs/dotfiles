@@ -10,7 +10,7 @@ mkdir -p "$HOME/.local/bin"
 ```
 and link all relevant scripts with the ln command.
 ```bash
-ln -s "./script-name" "$HOME/.local/bin/script-name"
+ln -s "./script-name" "$HOME/.local/bin"
 ```
 If you do not already have this local bin folder in your PATH, you can add it to
 the PATH easily in your $HOME/.profile, $HOME/.bash_profile, or $HOME/.bashrc
