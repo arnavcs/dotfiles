@@ -7,14 +7,18 @@
 
 # gets the current position of the window focussed
 curr_window=$(xdotool getactivewindow getwindowgeometry)
+
 window_pos=$( echo $curr_window | grep "Position" | grep -o "[0-9]*,[0-9]*" )
 window_geo=$( echo $curr_window | grep "Geometry" | grep -o "[0-9]*x[0-9]*" )
-window_left=$( echo $window_pos | cut -d "," -f 1 )
-window_top=$( echo $window_pos | cut -d "," -f 2 )
+
 window_width=$( echo $window_geo | cut -d "x" -f 1 )
 window_height=$( echo $window_geo | cut -d "x" -f 2 )
+
+window_left=$( echo $window_pos | cut -d "," -f 1 )
+window_top=$( echo $window_pos | cut -d "," -f 2 )
 window_right=$(( $window_left + $window_width ))
 window_bottom=$(( $window_top + $window_height ))
+
 window_x=$(( ($window_left + $window_right) / 2 ))
 window_y=$(( ($window_top + $window_bottom) / 2 ))
 
@@ -31,10 +35,12 @@ do
   # sets all of the dimensions of the current monitor being handled
   display_width=$( echo $display | cut -d ";" -f 1 )
   display_height=$( echo $display | cut -d ";" -f 2 )
+
   display_left=$( echo $display | cut -d ";" -f 3 )
   display_top=$( echo $display | cut -d ";" -f 4 )
   display_right=$(( $display_left + $display_width ))
   display_bottom=$(( $display_top + $display_height ))
+
   display_x=$(( ($display_left + $display_right) / 2 ))
   display_y=$(( ($display_top + $display_bottom) / 2 ))
 
