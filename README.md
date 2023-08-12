@@ -7,10 +7,9 @@ git project.
 
 ### NixOS Configuration
 
-Links (or copies) the NixOS configuration.
+Links the NixOS configuration.
 ```sh
 ln ./configs/nixos/configuration.nix /etc/nixos
-cp ./configs/nixos/configuration.nix /etc/nixos
 ```
 
 ## Window Manager and Environment
@@ -21,11 +20,15 @@ Creating a directory for the hyprland config.
 ```sh
 mkdir -p $HOME/.config/hypr
 ```
-Links (or copies) the hyprland configuration.
+Links the hyprland configuration.
 ```sh
 ln ./configs/hypr/hyprland.conf $HOME/.config/hypr
-cp ./configs/hypr/hyprland.conf $HOME/.config/hypr
 ```
+
+### Wallpaper Configuration
+
+The hyprland configuration uses swaybg to automatically set the wallpaper to the
+image stored at `$HOME/.config/wallpaper`.
 
 ## Terminal Emulators
 
@@ -35,10 +38,9 @@ Creating a directory for the config.
 ```sh
 mkdir -p $HOME/.config/sakura
 ```
-Links (or copies) the sakura configuration.
+Links the sakura configuration.
 ```sh
 ln ./configs/sakura/sakura.conf $HOME/.config/sakura
-cp ./configs/sakura/sakura.conf $HOME/.config/sakura
 ```
 
 ## Text Editors
@@ -49,20 +51,18 @@ Creating a directory for the config.
 ```sh
 mkdir -p $HOME/.config/helix
 ```
-Links (or copies) the helix configuration.
+Links the helix configuration.
 ```sh
 ln ./configs/helix/config.toml $HOME/.config/helix
-cp ./configs/helix/config.toml $HOME/.config/helix
 ```
 
 ## Git
 
 ### Local Git Configuration
 
-Links (or copies) the git configuration.
+Links the git configuration.
 ```sh
 ln ./configs/git/.gitconfig $HOME
-cp ./configs/git/.gitconfig $HOME
 ```
 
 ### Adding SSH key to Github
