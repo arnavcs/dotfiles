@@ -1,0 +1,11 @@
+theme = "kanagawa"
+
+[editor]
+auto-pairs = false # defaults to `true`
+
+[editor.soft-wrap]
+enable = true
+
+[editor.indent-guides]
+render = true
+character = ":" # Some characters that work well: "▏", "╎", "┆", "┊", "⸽"
