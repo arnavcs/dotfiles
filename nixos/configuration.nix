@@ -58,7 +58,9 @@
     isNormalUser = true;
     description = "Arnav Kumar";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [ ];
+    packages = with pkgs; [ 
+      texlive.combined.scheme-full
+    ];
   };
 
   # Allow unfree packages
@@ -66,22 +68,23 @@
 
   # List packages installed in system profile.
   environment.systemPackages = with pkgs; [
-    libnotify   # notification library
-    sakura      # terminal emulator
-    btop        # system monitor
-    firefox     # web browser
-    qutebrowser # web browser
-    vim         # text editor
-    helix       # text editor
-    texmacs     # scientific document editor
-    git         # version control
-    wofi        # app launcher
-    swaybg      # wallpaper setter
-    mako        # notification daemon
-    zathura     # document viewer
-    mpv         # video player
-    imv         # image viewer
-    neofetch    # system fetch
+    libnotify     # notification library
+    sakura        # terminal emulator
+    btop          # system monitor
+    firefox       # web browser
+    qutebrowser   # web browser
+    vim           # text editor
+    helix         # text editor
+    texmacs       # scientific document editor
+    git           # version control
+    wofi          # app launcher
+    swaybg        # wallpaper setter
+    mako          # notification daemon
+    zathura       # document viewer
+    mpv           # video player
+    imv           # image viewer
+    neofetch      # system fetch
+    brightnessctl # change brightness
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -93,6 +96,12 @@
   # };
 
   # List services that you want to enable:
+
+  services.printing.enable = true;
+  services.avahi.enable = true;
+  services.avahi.nssmdns = true;
+  # for a WiFi printer
+  services.avahi.openFirewall = true;
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;

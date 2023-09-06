@@ -73,3 +73,11 @@ ssh-keygen -t ed25519 -C "$( git config user.email )"
 ```
 Then copy the generated public key and add it as a github authentication key.
 
+## Typesetting and Word Processing
+
+### GNU TeXmacs
+
+Using my custom CSS file for HTML exports
+```
+Edit > Preferences > Convert > CSS Stylesheet: https://arnavcs.github.io/assets/texmacs.css
+```
