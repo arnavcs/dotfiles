@@ -9,7 +9,7 @@ git project.
 
 Links the NixOS configuration.
 ```sh
-ln ./configs/nixos/configuration.nix /etc/nixos
+ln ./nixos/configuration.nix /etc/nixos
 ```
 
 ## Window Manager and Environment
@@ -22,7 +22,18 @@ mkdir -p $HOME/.config/hypr
 ```
 Links the hyprland configuration.
 ```sh
-ln ./configs/hypr/hyprland.conf $HOME/.config/hypr
+ln ./hypr/hyprland.conf $HOME/.config/hypr
+```
+
+### Waybar Configuration
+
+Creating a directory for the waybar config.
+```sh
+mkdir -p $HOME/.config/waybar
+```
+Links the waybar configuration.
+```sh
+ln ./waybar/config $HOME/.config/waybar
 ```
 
 ### Wallpaper Configuration
@@ -40,7 +51,7 @@ mkdir -p $HOME/.config/sakura
 ```
 Links the sakura configuration.
 ```sh
-ln ./configs/sakura/sakura.conf $HOME/.config/sakura
+ln ./sakura/sakura.conf $HOME/.config/sakura
 ```
 
 ## Text Editors
@@ -53,7 +64,7 @@ mkdir -p $HOME/.config/helix
 ```
 Links the helix configuration.
 ```sh
-ln ./configs/helix/config.toml $HOME/.config/helix
+ln ./helix/config.toml $HOME/.config/helix
 ```
 
 ## Git
@@ -62,7 +73,7 @@ ln ./configs/helix/config.toml $HOME/.config/helix
 
 Links the git configuration.
 ```sh
-ln ./configs/git/.gitconfig $HOME
+ln ./git/.gitconfig $HOME
 ```
 
 ### Adding SSH key to Github

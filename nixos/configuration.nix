@@ -35,7 +35,7 @@
   };
 
   # Set your time zone.
-  time.timeZone = "America/Edmonton";
+  time.timeZone = "America/Toronto";
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_CA.UTF-8";
@@ -59,7 +59,7 @@
     description = "Arnav Kumar";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [ 
-      texlive.combined.scheme-full
+      texlive.combined.scheme-full # latex packages
     ];
   };
 
@@ -79,12 +79,14 @@
     git           # version control
     wofi          # app launcher
     swaybg        # wallpaper setter
+    waybar        # status bar
     mako          # notification daemon
     zathura       # document viewer
     mpv           # video player
     imv           # image viewer
     neofetch      # system fetch
     brightnessctl # change brightness
+    p7zip         # extracting and zipping in 7z format
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
