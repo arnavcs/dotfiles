@@ -68,25 +68,26 @@
 
   # List packages installed in system profile.
   environment.systemPackages = with pkgs; [
-    libnotify     # notification library
-    sakura        # terminal emulator
-    btop          # system monitor
-    firefox       # web browser
-    qutebrowser   # web browser
-    vim           # text editor
-    helix         # text editor
-    texmacs       # scientific document editor
-    git           # version control
-    wofi          # app launcher
-    swaybg        # wallpaper setter
-    waybar        # status bar
-    mako          # notification daemon
-    zathura       # document viewer
-    mpv           # video player
-    imv           # image viewer
-    neofetch      # system fetch
-    brightnessctl # change brightness
-    p7zip         # extracting and zipping in 7z format
+    libnotify            # notification library
+    sakura               # terminal emulator
+    btop                 # system monitor
+    firefox              # web browser
+    qutebrowser          # web browser
+    vim                  # text editor
+    helix                # text editor
+    texmacs              # scientific document editor
+    git                  # version control
+    wofi                 # app launcher
+    swaybg               # wallpaper setter
+    waybar               # status bar
+    mako                 # notification daemon
+    zathura              # document viewer
+    mpv                  # video player
+    imv                  # image viewer
+    neofetch             # system fetch
+    brightnessctl        # change brightness
+    p7zip                # extracting and zipping in 7z format
+    networkmanagerapplet # network manager tray applet
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
