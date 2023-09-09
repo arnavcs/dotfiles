@@ -10,7 +10,7 @@
     },
     "battery": {
         "format-time": "{H} h {M} m",
-        "format": "battery: {capacity}% | {time}"
+        "format": "battery: {capacity}%"
     },
     "backlight": {
         "format": "backlight: {percent}%"

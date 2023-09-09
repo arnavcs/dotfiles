@@ -68,6 +68,7 @@
 
   # List packages installed in system profile.
   environment.systemPackages = with pkgs; [
+    asusctl              # interacting with Asus ROG laptops
     libnotify            # notification library
     sakura               # terminal emulator
     btop                 # system monitor
@@ -105,6 +106,10 @@
   services.avahi.nssmdns = true;
   # for a WiFi printer
   services.avahi.openFirewall = true;
+
+  # For Asusctl
+  services.asusd.enable = true;
+  services.asusd.enableUserService = true;
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;

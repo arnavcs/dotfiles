@@ -12,6 +12,14 @@ Links the NixOS configuration.
 ln ./nixos/configuration.nix /etc/nixos
 ```
 
+### Laptop Specific Configuration
+
+In `configuration.nix`, `asusctl` is set up as I am running this configuration 
+on an Asus ROG laptop. Some changes made with `asusctl` include to:
+1. reduce the maximum battery capacity to 75% with `asusctl -c 75`
+1. disable keyboard flashing during sleep with `asusctl led-pow-2 sleep -k false`
+1. change active profile to quiet with `asusctl profile -P Quiet`
+
 ## Window Manager and Environment
 
 ### Hyprland Configuration
