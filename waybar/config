@@ -33,4 +33,7 @@
     "network": {
         "format-wifi": "wifi: {essid} | {bandwidthUpBytes} ↑ {bandwidthDownBytes} ↓"
     },
+    "tray": {
+        "spacing": 10
+    }
 }
