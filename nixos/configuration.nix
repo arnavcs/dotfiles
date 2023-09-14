@@ -71,7 +71,7 @@
   environment.systemPackages = with pkgs; [
     asusctl              # interacting with Asus ROG laptops
     libnotify            # notification library
-    sakura               # terminal emulator
+    foot                 # terminal emulator
     btop                 # system monitor
     firefox              # web browser
     qutebrowser          # web browser
