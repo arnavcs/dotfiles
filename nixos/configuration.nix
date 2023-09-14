@@ -79,7 +79,7 @@
     helix                # text editor
     texmacs              # scientific document editor
     git                  # version control
-    wofi                 # app launcher
+    bemenu               # app launcher
     swaybg               # wallpaper setter
     waybar               # status bar
     mako                 # notification daemon

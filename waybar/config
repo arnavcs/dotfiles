@@ -1,9 +1,8 @@
 {
     "layer": "top",
     "position": "top",
-    "spacing": "10",
+    "height": 20,
     "modules-left": ["clock", "battery", "backlight", "temperature", "wireplumber", "cpu", "disk", "memory", "network"],
-    "modules-center": [],
     "modules-right": ["tray"],
     "clock": {
         "format": "clock: {:%a %b %d  %I:%M %p}"
