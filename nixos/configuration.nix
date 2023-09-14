@@ -60,6 +60,7 @@
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [ 
       texlive.combined.scheme-full # latex packages
+      racket                       # racket programming language
     ];
   };
 
@@ -87,6 +88,7 @@
     imv                  # image viewer
     neofetch             # system fetch
     brightnessctl        # change brightness
+    wl-clipboard         # managing clipboard content
     p7zip                # extracting and zipping in 7z format
     networkmanagerapplet # network manager tray applet
   ];
