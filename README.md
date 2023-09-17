@@ -35,6 +35,8 @@ ln ./hypr/hyprland.conf $HOME/.config/hypr
 
 ### Waybar Configuration
 
+Waybar is the status bar that I choose to use.
+
 Creating a directory for the waybar config.
 ```sh
 mkdir -p $HOME/.config/waybar
@@ -44,22 +46,30 @@ Links the waybar configuration.
 ln ./waybar/config $HOME/.config/waybar
 ```
 
-### Wallpaper Configuration
+### Mako Configuration
 
-The hyprland configuration uses swaybg to automatically set the wallpaper to the
-image stored at `$HOME/.config/wallpaper`.
+Mako is the notification daemon that I choose to use.
+
+Creating a directory for the mako configuration.
+```sh
+mkdir -p $HOME/.config/mako
+```
+Links the mako configuration.
+```sh
+ln ./mako/config $HOME/.config/mako
+```
 
 ## Terminal Emulators
 
-### Sakura Configuration
+### Foot Configuration
 
 Creating a directory for the config.
 ```sh
-mkdir -p $HOME/.config/sakura
+mkdir -p $HOME/.config/foot
 ```
-Links the sakura configuration.
+Links the foot configuration.
 ```sh
-ln ./sakura/sakura.conf $HOME/.config/sakura
+ln ./foot/foot.ini $HOME/.config/foot
 ```
 
 ## Text Editors

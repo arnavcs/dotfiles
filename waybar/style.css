@@ -16,7 +16,7 @@
 }
 
 window#waybar {
-    background-color: #1F1F28;
+    background-color: transparent;
     color: #DCD7BA;
 }
 
@@ -98,7 +98,10 @@ button:hover {
 #mpd {
     background-color: #1F1F28;
     color: #DCD7BA;
-    padding: 0 10px;
+    padding: 2px 10px;
+    border: 2px solid #2D4F67;
+    border-radius: 9px;
+    margin: 0px 5px;
 }
 
 #battery.charging, #battery.plugged {

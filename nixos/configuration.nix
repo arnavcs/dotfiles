@@ -59,8 +59,10 @@
     description = "Arnav Kumar";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [ 
-      texlive.combined.scheme-full # latex packages
-      racket                       # racket programming language
+      texlive.combined.scheme-full   # latex packages
+      racket                         # racket programming language
+      llvmPackages_9.clang-unwrapped # C/C++ language server
+      lldb                           # C/C++ debugger
     ];
   };
 
@@ -83,6 +85,8 @@
     swaybg               # wallpaper setter
     waybar               # status bar
     mako                 # notification daemon
+    grim                 # screenshot
+    slurp                # screen area selector
     zathura              # document viewer
     mpv                  # video player
     imv                  # image viewer

@@ -1,25 +1,27 @@
 {
     "layer": "top",
     "position": "top",
-    "height": 20,
-    "modules-left": ["clock", "battery", "backlight", "temperature", "wireplumber", "cpu", "disk", "memory", "network"],
+    "margin-top": 10,
+    "margin-left": 5,
+    "margin-right": 5,
+    "modules-left": ["clock", "battery", "backlight", "wireplumber", "network"],
     "modules-right": ["tray"],
     "clock": {
-        "format": "clock: {:%a %b %d  %I:%M %p}"
+        "format": "  {:%a %b %d %I:%M %p}"
     },
     "battery": {
         "format-time": "{H} h {M} m",
-        "format": "battery: {capacity}%"
+        "format": "  {capacity}%"
     },
     "backlight": {
-        "format": "backlight: {percent}%"
+        "format": "  {percent}%"
     },
     "temperature": {
-        "format": "temp: {temperatureC}°C"
+        "format": "  {temperatureC}°C"
     },
     "wireplumber": {
-        "format": "volume: {volume}%",
-        "format-muted": "volume: muted"
+        "format": "  {volume}%",
+        "format-muted": "  {volume}%"
     },
     "cpu": {
         "format": "cpu: {usage}%"
@@ -28,10 +30,10 @@
         "format": "disk: {percentage_used}%"
     },
     "memory": {
-        "format": "memory: {percentage}%"
+        "format": "mem: {percentage}%"
     },
     "network": {
-        "format-wifi": "wifi: {essid} | {bandwidthUpBytes} ↑ {bandwidthDownBytes} ↓"
+        "format-wifi": "  {essid}    {bandwidthUpBytes}    {bandwidthDownBytes}"
     },
     "tray": {
         "spacing": 10
