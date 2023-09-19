@@ -81,7 +81,7 @@
     helix                # text editor
     texmacs              # scientific document editor
     git                  # version control
-    bemenu               # app launcher
+    tofi                 # app launcher
     swaybg               # wallpaper setter
     waybar               # status bar
     mako                 # notification daemon

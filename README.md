@@ -33,7 +33,7 @@ Links the hyprland configuration.
 ln ./hypr/hyprland.conf $HOME/.config/hypr
 ```
 
-### Waybar Configuration
+### Status Bar Configuration
 
 Waybar is the status bar that I choose to use.
 
@@ -46,7 +46,7 @@ Links the waybar configuration.
 ln ./waybar/config $HOME/.config/waybar
 ```
 
-### Mako Configuration
+### Notification Daemon Configuration
 
 Mako is the notification daemon that I choose to use.
 
@@ -57,6 +57,19 @@ mkdir -p $HOME/.config/mako
 Links the mako configuration.
 ```sh
 ln ./mako/config $HOME/.config/mako
+```
+
+### App Launcher Configuration
+
+Tofi is the app launcher that I choose to use.
+
+Creating a directory for the tofi configuration.
+```sh
+mkdir -p $HOME/.config/tofi
+```
+Links the tofi configuration.
+```sh
+ln ./tofi/config $HOME/.config/tofi
 ```
 
 ## Terminal Emulators
