@@ -61,6 +61,7 @@
     packages = with pkgs; [ 
       texlive.combined.scheme-full   # latex packages
       racket                         # racket programming language
+      gcc                            # C/C++ compiler
       llvmPackages_9.clang-unwrapped # C/C++ language server
       lldb                           # C/C++ debugger
     ];
@@ -79,6 +80,7 @@
     qutebrowser          # web browser
     vim                  # text editor
     helix                # text editor
+    kakoune              # text editor
     texmacs              # scientific document editor
     git                  # version control
     tofi                 # app launcher
@@ -95,6 +97,7 @@
     wl-clipboard         # managing clipboard content
     p7zip                # extracting and zipping in 7z format
     networkmanagerapplet # network manager tray applet
+    sshfs                # ssh file system
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

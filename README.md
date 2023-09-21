@@ -85,6 +85,12 @@ Links the foot configuration.
 ln ./foot/foot.ini $HOME/.config/foot
 ```
 
+Additionally, to allow for certain features such as clearing over ssh with foot, add the following to the ssh config file (usually located at `$HOME/.ssh/config`).
+```
+Host *
+  SetEnv TERM=xterm-246color
+```
+
 ## Text Editors
 
 ### Helix Configuration
