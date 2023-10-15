@@ -64,6 +64,8 @@
       gcc                            # C/C++ compiler
       llvmPackages_9.clang-unwrapped # C/C++ language server
       lldb                           # C/C++ debugger
+      python3                        # python3 programming language
+      gnumake                        # gnumake builder
     ];
   };
 
@@ -72,32 +74,40 @@
 
   # List packages installed in system profile.
   environment.systemPackages = with pkgs; [
-    asusctl              # interacting with Asus ROG laptops
-    libnotify            # notification library
-    foot                 # terminal emulator
-    btop                 # system monitor
-    firefox              # web browser
-    qutebrowser          # web browser
-    vim                  # text editor
-    helix                # text editor
-    kakoune              # text editor
-    texmacs              # scientific document editor
-    git                  # version control
-    tofi                 # app launcher
-    swaybg               # wallpaper setter
-    waybar               # status bar
-    mako                 # notification daemon
-    grim                 # screenshot
-    slurp                # screen area selector
-    zathura              # document viewer
-    mpv                  # video player
-    imv                  # image viewer
-    neofetch             # system fetch
-    brightnessctl        # change brightness
-    wl-clipboard         # managing clipboard content
-    p7zip                # extracting and zipping in 7z format
-    networkmanagerapplet # network manager tray applet
-    sshfs                # ssh file system
+    xdg-desktop-portal-hyprland # xdg backend for Hyprland
+    asusctl                     # interacting with Asus ROG laptops
+    libnotify                   # notification library
+    qt6.qtwayland               # application framework
+    libsForQt5.qt5.qtwayland    # ^
+    foot                        # terminal emulator
+    btop                        # system monitor
+    firefox                     # web browser
+    qutebrowser                 # ^
+    vim                         # text editor
+    helix                       # ^
+    kakoune                     # ^
+    geany                       # ^
+    bat                         # code pager
+    texmacs                     # scientific document editor
+    git                         # version control
+    tofi                        # app launcher
+    swaybg                      # wallpaper setter
+    waybar                      # status bar
+    mako                        # notification daemon
+    grim                        # screenshot
+    slurp                       # screen area selector
+    zathura                     # document viewer
+    mpv                         # video player
+    imv                         # image viewer
+    xchm                        # chm viewer
+    neofetch                    # system fetch
+    brightnessctl               # change brightness
+    wl-clipboard                # managing clipboard content
+    p7zip                       # extracting and zipping in 7z format
+    ffmpeg                      # for editing video and audio
+    networkmanagerapplet        # network manager tray applet
+    sshfs                       # ssh file system
+    translate-shell             # cli translator
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
