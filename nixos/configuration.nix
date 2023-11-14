@@ -10,6 +10,11 @@
       ./hardware-configuration.nix
     ];
 
+  swapDevices = [ {
+    device = "/var/lib/swapfile";
+    size = 16*1024;
+  } ];
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -59,13 +64,6 @@
     description = "Arnav Kumar";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [ 
-      texlive.combined.scheme-full   # latex packages
-      racket                         # racket programming language
-      gcc                            # C/C++ compiler
-      llvmPackages_9.clang-unwrapped # C/C++ language server
-      lldb                           # C/C++ debugger
-      python3                        # python3 programming language
-      gnumake                        # gnumake builder
     ];
   };
 
@@ -74,40 +72,54 @@
 
   # List packages installed in system profile.
   environment.systemPackages = with pkgs; [
-    xdg-desktop-portal-hyprland # xdg backend for Hyprland
-    asusctl                     # interacting with Asus ROG laptops
-    libnotify                   # notification library
-    qt6.qtwayland               # application framework
-    libsForQt5.qt5.qtwayland    # ^
-    foot                        # terminal emulator
-    btop                        # system monitor
-    firefox                     # web browser
-    qutebrowser                 # ^
-    vim                         # text editor
-    helix                       # ^
-    kakoune                     # ^
-    geany                       # ^
-    bat                         # code pager
-    texmacs                     # scientific document editor
-    git                         # version control
-    tofi                        # app launcher
-    swaybg                      # wallpaper setter
-    waybar                      # status bar
-    mako                        # notification daemon
-    grim                        # screenshot
-    slurp                       # screen area selector
-    zathura                     # document viewer
-    mpv                         # video player
-    imv                         # image viewer
-    xchm                        # chm viewer
-    neofetch                    # system fetch
-    brightnessctl               # change brightness
-    wl-clipboard                # managing clipboard content
-    p7zip                       # extracting and zipping in 7z format
-    ffmpeg                      # for editing video and audio
-    networkmanagerapplet        # network manager tray applet
-    sshfs                       # ssh file system
-    translate-shell             # cli translator
+    xdg-desktop-portal-hyprland    # xdg backend for Hyprland
+    asusctl                        # interacting with Asus ROG laptops
+    libnotify                      # notification library
+    qt6.qtwayland                  # application framework
+    libsForQt5.qt5.qtwayland       # ^
+    foot                           # terminal emulator
+    btop                           # system monitor
+    firefox                        # web browser
+    qutebrowser                    # ^
+    vim                            # text editor
+    emacs                          # ^
+    helix                          # ^
+    kakoune                        # ^
+    geany                          # ^
+    vscode                         # ^
+    bat                            # code pager
+    texmacs                        # scientific document editor
+    git                            # version control
+    tofi                           # app launcher
+    swaybg                         # wallpaper setter
+    waybar                         # status bar
+    mako                           # notification daemon
+    grim                           # screenshot
+    slurp                          # screen area selector
+    zathura                        # document viewer
+    mpv                            # video player
+    imv                            # image viewer
+    xchm                           # chm viewer
+    neofetch                       # system fetch
+    yt-dlp                         # youtube video downloader
+    brightnessctl                  # change brightness
+    wl-clipboard                   # managing clipboard content
+    p7zip                          # extracting and zipping in 7z format
+    ffmpeg                         # for editing video and audio
+    pandoc                         # change file format
+    poppler_utils                  # pdf rendering library
+    networkmanagerapplet           # network manager tray applet
+    sshfs                          # ssh file system
+    translate-shell                # cli translator
+    tty-clock                      # tty clock
+    calc                           # calculator
+    texlive.combined.scheme-full   # latex packages
+    racket                         # racket programming language
+    gcc                            # C/C++ compiler
+    llvmPackages_9.clang-unwrapped # C/C++ language server
+    lldb                           # C/C++ debugger
+    python3                        # python3 programming language
+    gnumake                        # gnumake builder
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
