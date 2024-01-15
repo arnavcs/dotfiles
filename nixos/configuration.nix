@@ -45,6 +45,11 @@
   # Select internationalisation properties.
   i18n.defaultLocale = "en_CA.UTF-8";
 
+  # enabling startx for starting xserver
+  services.xserver.enable = true;
+  services.xserver.displayManager.startx.enable = true;
+  services.xserver.windowManager.berry.enable = true;
+
   # Configure keymap in X11
   services.xserver = {
     layout = "us";
@@ -54,7 +59,7 @@
   # Enabling hyprland
   programs.hyprland.enable = true;
 
-  fonts.fonts = with pkgs; [
+  fonts.packages = with pkgs; [
     nerdfonts
   ];
 
@@ -72,54 +77,72 @@
 
   # List packages installed in system profile.
   environment.systemPackages = with pkgs; [
-    xdg-desktop-portal-hyprland    # xdg backend for Hyprland
-    asusctl                        # interacting with Asus ROG laptops
-    libnotify                      # notification library
-    qt6.qtwayland                  # application framework
-    libsForQt5.qt5.qtwayland       # ^
-    foot                           # terminal emulator
-    btop                           # system monitor
-    firefox                        # web browser
-    qutebrowser                    # ^
-    vim                            # text editor
-    emacs                          # ^
-    helix                          # ^
-    kakoune                        # ^
-    geany                          # ^
-    vscode                         # ^
-    bat                            # code pager
-    texmacs                        # scientific document editor
-    git                            # version control
-    tofi                           # app launcher
-    swaybg                         # wallpaper setter
-    waybar                         # status bar
-    mako                           # notification daemon
-    grim                           # screenshot
-    slurp                          # screen area selector
-    zathura                        # document viewer
-    mpv                            # video player
-    imv                            # image viewer
-    xchm                           # chm viewer
-    neofetch                       # system fetch
-    yt-dlp                         # youtube video downloader
-    brightnessctl                  # change brightness
-    wl-clipboard                   # managing clipboard content
-    p7zip                          # extracting and zipping in 7z format
-    ffmpeg                         # for editing video and audio
-    pandoc                         # change file format
-    poppler_utils                  # pdf rendering library
-    networkmanagerapplet           # network manager tray applet
-    sshfs                          # ssh file system
-    translate-shell                # cli translator
-    tty-clock                      # tty clock
-    calc                           # calculator
-    texlive.combined.scheme-full   # latex packages
-    racket                         # racket programming language
-    gcc                            # C/C++ compiler
-    llvmPackages_9.clang-unwrapped # C/C++ language server
-    lldb                           # C/C++ debugger
-    python3                        # python3 programming language
-    gnumake                        # gnumake builder
+    xdg-desktop-portal-hyprland       # xdg backend for Hyprland
+    asusctl                           # interacting with Asus ROG laptops
+    libnotify                         # notification library
+    sxhkd                             # x hotkey daemon for berry
+    arandr                            # managing monitor placement for xserver
+    qt6.qtwayland                     # application framework
+    libsForQt5.qt5.qtwayland          # ^
+    foot                              # terminal emulator
+    sakura                            # ^
+    btop                              # system monitor
+    tmux                              # terminal multiplexer
+    screen                            # ^
+    tldr                              # simplified man pages for quick reference
+    firefox                           # web browser
+    qutebrowser                       # ^
+    browsh                            # ^
+    lynx                              # ^
+    vim                               # text editor
+    emacs                             # ^
+    helix                             # ^
+    kakoune                           # ^
+    geany                             # ^
+    vscode                            # ^
+    bat                               # code pager
+    libreoffice                       # free office quite
+    texmacs                           # scientific document editor
+    xournal                           # pdf annotation software
+    git                               # version control
+    elvish                            # shell
+    tofi                              # app launcher
+    swaybg                            # wallpaper setter
+    waybar                            # status bar
+    mako                              # notification daemon
+    grim                              # screenshot
+    slurp                             # screen area selector
+    zathura                           # document viewer
+    mpv                               # video player
+    imv                               # image viewer
+    xchm                              # chm viewer
+    neofetch                          # system fetch
+    yt-dlp                            # youtube video downloader
+    brightnessctl                     # change brightness
+    wl-clipboard                      # managing clipboard content
+    p7zip                             # extracting and zipping in 7z format
+    ffmpeg                            # for editing video and audio
+    pandoc                            # change file format
+    haskellPackages.pandoc-plot_1_8_0 # plotting filter for pandoc
+    graphviz-nox                      # graph generator
+    poppler_utils                     # pdf rendering library
+    networkmanagerapplet              # network manager tray applet
+    sshfs                             # ssh file system
+    translate-shell                   # cli translator
+    tty-clock                         # tty clock
+    calc                              # calculator
+    texlive.combined.scheme-full      # latex packages
+    racket                            # racket programming language
+    ghc                               # haskell compiler
+    haskell-language-server           # haskell language server
+    gcc                               # C/C++ compiler
+    llvmPackages_9.clang-unwrapped    # C/C++ language server
+    lldb                              # C/C++ debugger
+    gdb                               # ^
+    ncurses                           # C tui builder
+    valgrind                          # C memory leak detecter
+    python3                           # python3 programming language
+    gnumake                           # gnumake builder
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

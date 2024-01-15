@@ -1,0 +1,26 @@
+#!/bin/sh
+
+# set decoration
+
+berryc focus_color         aa5555
+berryc unfocus_color       332222
+# berryc inner_focus_color   55aa55
+# berryc inner_unfocus_color 558855
+
+berryc border_width        5
+berryc inner_border_width  0
+
+berryc draw_text           false
+berryc title_height        0
+
+# options
+
+berryc smart_place         true
+berryc edge_lock           true
+berryc top_gap             0
+
+berryc move_mask           mod4
+berryc move_button         1
+berryc resize_mask         mod4
+berryc resize_button       3
+

@@ -12,6 +12,13 @@ Links the NixOS configuration.
 ln ./nixos/configuration.nix /etc/nixos
 ```
 
+Change to the unstable channel.
+```sh
+sudo nix-channel --add https://channels.nixos.org/nixos-unstable nixos
+nix-channel --update nixos
+nixos-rebuild switch
+```
+
 ### Laptop Specific Configuration
 
 In `configuration.nix`, `asusctl` is set up as I am running this configuration 
@@ -33,7 +40,7 @@ Links the hyprland configuration.
 ln ./hypr/hyprland.conf $HOME/.config/hypr
 ```
 
-### Status Bar Configuration
+#### Status Bar Configuration
 
 Waybar is the status bar that I choose to use.
 
@@ -46,7 +53,7 @@ Links the waybar configuration.
 ln ./waybar/config $HOME/.config/waybar
 ```
 
-### Notification Daemon Configuration
+#### Notification Daemon Configuration
 
 Mako is the notification daemon that I choose to use.
 
@@ -59,7 +66,7 @@ Links the mako configuration.
 ln ./mako/config $HOME/.config/mako
 ```
 
-### App Launcher Configuration
+#### App Launcher Configuration
 
 Tofi is the app launcher that I choose to use.
 
@@ -70,6 +77,21 @@ mkdir -p $HOME/.config/tofi
 Links the tofi configuration.
 ```sh
 ln ./tofi/config $HOME/.config/tofi
+```
+
+### Alernatively: Berrywm Configuration
+
+Berrywm is a lightweight x floating window manager that I choose to use without a status bar, notification daemon, or app launcher.
+
+Creating a directory for the configuration.
+```sh
+mkdir -p $HOME/.config/berry
+```
+Linking the different configurations.
+```sh
+ln ./berry/autostart $HOME/.config/berry
+ln ./berry/sxhkdrc $HOME/.config/berry
+ln ./berry/.xinitrc $HOME
 ```
 
 ## Terminal Emulators
