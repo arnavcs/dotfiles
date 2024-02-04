@@ -79,21 +79,6 @@ Links the tofi configuration.
 ln ./tofi/config $HOME/.config/tofi
 ```
 
-### Alernatively: Berrywm Configuration
-
-Berrywm is a lightweight x floating window manager that I choose to use without a status bar, notification daemon, or app launcher.
-
-Creating a directory for the configuration.
-```sh
-mkdir -p $HOME/.config/berry
-```
-Linking the different configurations.
-```sh
-ln ./berry/autostart $HOME/.config/berry
-ln ./berry/sxhkdrc $HOME/.config/berry
-ln ./berry/.xinitrc $HOME
-```
-
 ## Terminal Emulators
 
 ### Foot Configuration
@@ -143,11 +128,3 @@ ssh-keygen -t ed25519 -C "$( git config user.email )"
 ```
 Then copy the generated public key and add it as a github authentication key.
 
-## Typesetting and Word Processing
-
-### GNU TeXmacs
-
-Using my custom CSS file for HTML exports
-```
-Edit > Preferences > Convert > CSS Stylesheet: https://arnavcs.github.io/assets/texmacs.css
-```

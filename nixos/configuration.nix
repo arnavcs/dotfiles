@@ -45,11 +45,6 @@
   # Select internationalisation properties.
   i18n.defaultLocale = "en_CA.UTF-8";
 
-  # enabling startx for starting xserver
-  services.xserver.enable = true;
-  services.xserver.displayManager.startx.enable = true;
-  services.xserver.windowManager.berry.enable = true;
-
   # Configure keymap in X11
   services.xserver = {
     layout = "us";
@@ -60,6 +55,9 @@
   programs.hyprland.enable = true;
 
   fonts.packages = with pkgs; [
+    noto-fonts
+    noto-fonts-cjk
+    noto-fonts-emoji
     nerdfonts
   ];
 
@@ -82,6 +80,7 @@
     libnotify                         # notification library
     sxhkd                             # x hotkey daemon for berry
     arandr                            # managing monitor placement for xserver
+    pavucontrol                       # pulse audio controller
     qt6.qtwayland                     # application framework
     libsForQt5.qt5.qtwayland          # ^
     foot                              # terminal emulator
