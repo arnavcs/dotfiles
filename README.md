@@ -1,9 +1,7 @@
 # dotfiles
 
-## Installing
+Other than `configuration.nix` (which belongs in `/etc/nixos/`), all files should have installation location relative to `$HOME`.
 
-Other than `configuration.nix`, all other files can be installed with something like GNU stow.
-Their installation location relative to the user's home directory should mirror the location of the file relative to the root of this git repository.
-
-For NixOS systems, the `configuration.nix` belongs in `/etc/nixos/`.
+Some configuration files (such as `.cwmrc`) make reference to executable scripts which are ommited from this repository.
+Such scripts can be found [here](https://github.com/arnavcs/scripts) and can be installed to a location such as `$HOME/.local/bin/` (which is added to the path in the `.profile` configuration).
 
