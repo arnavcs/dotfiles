@@ -1,0 +1,13 @@
+#!/bin/sh
+
+win=$(pfw)
+
+dim=$(wattr xywh $win |
+      awk 'BEGIN     { RS = " " } \
+           (NR <= 2) { print 40 * int($1 / 40) } \
+           (NR > 2)  { a = $1 / 40; b = int(a); print 40 * (b < a ? b + 1 : b) - 2 }')
+
+echo $dim
+
+wtp $dim $win
+
