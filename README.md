@@ -15,3 +15,6 @@ Opting for a computing experience that is intuitive and familiar to me and is ea
 * `firefox`, `qutebrowser`, or `lynx` as a web browser
 * `pipe-rename` or `mmv-go` for bulk renaming
 * `texmacs` occasionally for typesetting
+
+You may notice that I do not have a `.xinitrc` file.
+Instead, use `startx $(which cwm)` to launch `cwm`.
