@@ -11,6 +11,8 @@ bind-key 4S-r         restart
 bind-key 4S-q         quit
 bind-key 4-BackSpace  dmenu-power
 
+bind-key 4-p          display-layout
+
 ######################
 # Launching Programs #
 ######################
@@ -80,7 +82,8 @@ bind-key 4S-j         window-resize-down
 bind-key 4S-k         window-resize-up
 bind-key 4S-l         window-resize-right
 
-bind-key 4-u          align-window
+bind-key 4-u          window-align
+bind-key 4-r          window-redraw
 
 vtile 0
 htile 0

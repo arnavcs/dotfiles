@@ -39,7 +39,7 @@
   };
 
   # Set your time zone.
-  time.timeZone = "America/Edmonton";
+  time.timeZone = "America/Toronto";
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_CA.UTF-8";
@@ -79,7 +79,7 @@
       kitty kakoune bat pipe-rename texmacs git xclip fzy zathura mpv sxiv neofetch
       yt-dlp brightnessctl p7zip unzip ffmpeg pandoc graphviz-nox poppler_utils tty-clock
       texlive.combined.scheme-full racket ghc haskell-language-server R tinycc gcc lldb
-      gdb ncurses valgrind python3 gnumake
+      gdb ncurses valgrind python3 gnumake scrot arandr
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
