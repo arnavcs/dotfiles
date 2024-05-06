@@ -9,7 +9,7 @@ command term kitty
 
 bind-key 4S-r         restart
 bind-key 4S-q         quit
-bind-key 4-BackSpace  dmenu-power
+bind-key 4-BackSpace  power-menu
 
 bind-key 4-p          display-layout
 
