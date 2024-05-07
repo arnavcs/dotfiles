@@ -12,6 +12,8 @@ bind-key 4S-q         quit
 bind-key 4-BackSpace  power-menu
 
 bind-key 4-p          display-layout
+bind-key 4-x          "screenshot anon"
+bind-key 4S-x         "screenshot name"
 
 ######################
 # Launching Programs #
