@@ -9,6 +9,7 @@
 
 export PATH="$HOME/.local/bin:$PATH"
 
+export MANPAGER="less"
 export EDITOR="kak"
 export TERMINAL="kitty"
 export READER="zathura"

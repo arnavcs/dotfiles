@@ -47,13 +47,14 @@
   # Configure X11
   services.xserver = {
       enable = true;
-      windowManager.cwm.enable = true;
       xkb = {
           layout = "us";
-          variant = "";
+          options = "compose:caps";
       };
       displayManager.startx.enable = true;
   };
+
+  services.libinput.touchpad.naturalScrolling = true;
 
   # fonts
   fonts.packages = with pkgs; [
@@ -75,25 +76,14 @@
 
   # List packages installed in system profile.
   environment.systemPackages = with pkgs; [
-      asusctl slop figlet btop boxes tldr firefox qutebrowser lynx dmenu wmutils-core
-      kitty kakoune bat pipe-rename texmacs git xclip fzy zathura mpv sxiv neofetch
-      yt-dlp brightnessctl p7zip unzip ffmpeg pandoc graphviz-nox poppler_utils tty-clock
-      texlive.combined.scheme-full racket ghc haskell-language-server R tinycc gcc lldb
-      gdb ncurses valgrind python3 gnumake scrot arandr
+      asusctl slop figlet btop boxes tldr firefox qutebrowser lynx dmenu kitty kakoune
+      bat pipe-rename texmacs git xclip mpv sxiv fastfetch unp yt-dlp brightnessctl p7zip
+      unzip ffmpeg pandoc graphviz-nox poppler_utils texlive.combined.scheme-full
+      tty-clock racket ghc haskell-language-server R tinycc gcc lldb gdb ncurses valgrind
+      python3 gnumake scrot arandr haskellPackages.pandoc-plot pwgen entr termdown sage
+      godot_4 aseprite pulsemixer discord mitscheme starship translate-shell openconnect
+      xournal i3 i3status clojure aria2 pup julia xorg.xev jupyter zip tree mupdf
   ];
-
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
-  # List services that you want to enable:
-
-  # for auto-cpufreq
-  # services.auto-cpufreq.enable = true;
 
   services.printing.enable = true;
   services.avahi.enable = true;
@@ -101,24 +91,8 @@
   # for a WiFi printer
   services.avahi.openFirewall = true;
 
-  # For Asusctl
   services.asusd.enable = true;
   services.asusd.enableUserService = true;
 
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
-
-  # This value determines the NixOS release from which the default
-  # settings for stateful data, like file locations and database versions
-  # on your system were taken. It‘s perfectly fine and recommended to leave
-  # this value at the release version of the first install of this system.
-  # Before changing this value read the documentation for this option
-  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "23.05"; # Did you read the comment?
+  system.stateVersion = "23.05";
 }

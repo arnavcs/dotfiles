@@ -1,0 +1,98 @@
+set $mod Mod4
+set $alt Mod1
+
+font pango:FiraCode Nerd Font Mono 8
+
+floating_modifier $mod
+tiling_drag modifier titlebar
+
+set $refresh_i3status killall -SIGUSR1 i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id wpctl set-volume -l 1.0 @DEFAULT_SINK@ 5%+ && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id wpctl set-volume -l 1.0 @DEFAULT_SINK@ 5%- && $refresh_i3status
+bindsym XF86AudioMute exec --no-startup-id wpctl set-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%- && $refresh_i3status
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set 5%+ && $refresh_i3status
+
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r restart
+bindsym $mod+$alt+Shift+e exit
+bindsym $mod+Shift+s exec "systemctl suspend"
+bindsym $mod+$alt+Shift+r exec "systemctl reboot"
+bindsym $mod+$alt+Shift+p exec "systemctl poweroff"
+
+bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+space exec --no-startup-id dmenu_run -l 25
+
+bindsym $mod+q kill
+
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+bindsym $mod+v split v
+
+bindsym $mod+t floating toggle
+
+bindsym $mod+f fullscreen toggle
+
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+bindsym $mod+g focus mode_toggle
+bindsym $mod+a focus parent
+bindsym $mod+d focus child
+
+bindsym $mod+Shift+h move left 20px
+bindsym $mod+Shift+j move down 20px
+bindsym $mod+Shift+k move up 20px
+bindsym $mod+Shift+l move right 20px
+
+bindsym $mod+$alt+h resize shrink width 20 px
+bindsym $mod+$alt+j resize grow height 20 px
+bindsym $mod+$alt+k resize shrink height 20 px
+bindsym $mod+$alt+l resize grow width 20 px
+
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+bindsym $mod+5 workspace number $ws5
+bindsym $mod+6 workspace number $ws6
+bindsym $mod+7 workspace number $ws7
+bindsym $mod+8 workspace number $ws8
+bindsym $mod+9 workspace number $ws9
+bindsym $mod+0 workspace number $ws10
+
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6
+bindsym $mod+Shift+7 move container to workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8
+bindsym $mod+Shift+9 move container to workspace number $ws9
+bindsym $mod+Shift+0 move container to workspace number $ws10
+
+bar {
+        position top
+        tray_output none
+        separator_symbol "  "
+        status_command i3status
+}
+
+exec ~/.screenlayout/laptop.sh
+

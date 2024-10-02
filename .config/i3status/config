@@ -1,0 +1,30 @@
+general {
+        output_format = "i3bar"
+        interval = 10
+}
+
+order += "volume master"
+order += "battery all"
+order += "time"
+
+volume master {
+        format = "VOL: %volume"
+	format_muted = "VOL: %volume"
+        device = "default"
+        mixer = "Master"
+        mixer_idx = 0
+}
+
+battery all {
+        format = "BAT: %percentage"
+        last_full_capacity = true
+        format_percentage = "%.00f%s"
+        path = "/sys/class/power_supply/BAT%d/uevent"
+        threshold_type = percentage
+        low_threshold = 10
+}
+
+time {
+        format = "%a %b %d %Y  %H:%M"
+}
+
