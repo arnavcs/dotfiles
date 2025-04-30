@@ -23,7 +23,10 @@ alias termdown='termdown --no-figlet'
 
 alias wttr='curl wttr.in'
 
-alias yt-dla='yt-dlp --extract-audio --audio-quality 0 --audio-format mp3'
+alias yt-dla='yt-dlp --embed-thumbnail --embed-chapters --extract-audio --audio-quality 0 --audio-format mp3'
+alias yt-dlas='yt-dlp --embed-thumbnail --split-chapters --extract-audio --audio-quality 0 --audio-format mp3'
+
+alias mpa='mpv --no-audio-display'
 
 # kitty integration
 

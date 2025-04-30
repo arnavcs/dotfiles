@@ -41,8 +41,8 @@ bindsym $mod+k focus up
 bindsym $mod+l focus right
 
 bindsym $mod+g focus mode_toggle
-bindsym $mod+a focus parent
-bindsym $mod+d focus child
+bindsym $mod+o focus parent
+bindsym $mod+i focus child
 
 bindsym $mod+Shift+h move left 20px
 bindsym $mod+Shift+j move down 20px
@@ -90,7 +90,7 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 bar {
         position top
         tray_output none
-        separator_symbol "  "
+        separator_symbol " | "
         status_command i3status
 }
 

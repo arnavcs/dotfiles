@@ -47,9 +47,10 @@
   # Configure X11
   services.xserver = {
       enable = true;
+      exportConfiguration = true;
       xkb = {
-          layout = "us";
-          options = "compose:caps";
+          layout = "us,ru";
+          options = "compose:caps,grp:alt_caps_toggle";
       };
       displayManager.startx.enable = true;
   };
@@ -59,7 +60,7 @@
   # fonts
   fonts.packages = with pkgs; [
     noto-fonts
-    noto-fonts-cjk
+    noto-fonts-cjk-sans
     noto-fonts-emoji
     nerdfonts
   ];
@@ -76,14 +77,17 @@
 
   # List packages installed in system profile.
   environment.systemPackages = with pkgs; [
-      asusctl slop figlet btop boxes tldr firefox qutebrowser lynx dmenu kitty kakoune
+      asusctl slop figlet btop boxes tldr firefox lynx dmenu kitty kakoune # blender
       bat pipe-rename texmacs git xclip mpv sxiv fastfetch unp yt-dlp brightnessctl p7zip
       unzip ffmpeg pandoc graphviz-nox poppler_utils texlive.combined.scheme-full
       tty-clock racket ghc haskell-language-server R tinycc gcc lldb gdb ncurses valgrind
       python3 gnumake scrot arandr haskellPackages.pandoc-plot pwgen entr termdown sage
       godot_4 aseprite pulsemixer discord mitscheme starship translate-shell openconnect
       xournal i3 i3status clojure aria2 pup julia xorg.xev jupyter zip tree mupdf
+      man-pages man-pages-posix obs-studio kdenlive
   ];
+
+  documentation.dev.enable = true;
 
   services.printing.enable = true;
   services.avahi.enable = true;
