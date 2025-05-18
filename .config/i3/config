@@ -25,6 +25,7 @@ bindsym $mod+space exec --no-startup-id dmenu_run -l 25
 bindsym $mod+p exec monitor-layout
 bindsym $mod+o exec audio-sink
 bindsym $mod+i exec pin-selection
+bindsym $mod+u exec copy-selection
 
 bindsym $mod+q kill
 

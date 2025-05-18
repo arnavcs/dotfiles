@@ -1,0 +1,7 @@
+#!/bin/sh
+#
+# requires mktemp, scrot, and xclip
+
+mkdir -p /tmp/screenshots/
+scrot -s -F '/tmp/screenshots/%Y-%m-%d_$wx$h.png' -e 'xclip -sel c -t image/png $f'
+
