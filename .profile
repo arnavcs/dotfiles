@@ -7,6 +7,10 @@
 #   |_|                           
 #
 
+#################
+# env variables #
+#################
+
 export PATH="$HOME/.local/bin:$PATH"
 
 export MANPAGER="less"
@@ -14,5 +18,8 @@ export EDITOR="kak"
 export TERMINAL="kitty"
 export READER="zathura"
 
-[ -f ~/.bashrc ] && source ~/.bashrc
+################
+# load .bashrc #
+################
 
+[ -f ~/.bashrc ] && source ~/.bashrc

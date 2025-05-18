@@ -1,0 +1,11 @@
+#!/bin/sh
+#
+# requires wireplumber for pipewire, awk, grep, and dmenu
+
+sink=$( wpctl status \
+      | awk '/^Audio$/,/^$/' \
+      | awk '/Sinks/,/^\s*│\s*$/' \
+      | grep -o "[0-9].*$" \
+      | dmenu -l 20 )
+[ -z sink ] || wpctl set-default $sink
+

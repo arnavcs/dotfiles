@@ -1,0 +1,7 @@
+#!/bin/sh
+#
+# requires mktemp, scrot, and sxiv
+
+mkdir -p /tmp/screenshots/
+scrot -s -F '/tmp/screenshots/%Y-%m-%d_$wx$h.png' -e 'sxiv $f'
+

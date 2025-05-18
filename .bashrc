@@ -15,27 +15,33 @@ export HISTIGNORE="&:ls:[bf]g:exit"
 
 [[ $- != *i* ]] && return # exit if not running interactively
 
-# aliases
+#########################
+# aliases and functions #
+#########################
 
 alias ls='ls -hN --group-directories-first --color=auto --hyperlink=auto'
 alias clock='tty-clock -ct'
 alias termdown='termdown --no-figlet'
 
-alias wttr='curl wttr.in'
+function wttr { curl "wttr.in/$1"; }
 
 alias yt-dla='yt-dlp --embed-thumbnail --embed-chapters --extract-audio --audio-quality 0 --audio-format mp3'
 alias yt-dlas='yt-dlp --embed-thumbnail --split-chapters --extract-audio --audio-quality 0 --audio-format mp3'
 
 alias mpa='mpv --no-audio-display'
 
-# kitty integration
+#####################
+# kitty integration #
+#####################
 
 if test -n "$KITTY_INSTALLATION_DIR"; then
     export KITTY_SHELL_INTEGRATION="enabled"
     source "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"
 fi
 
-# starship prompt
+###################
+# starship prompt #
+###################
 
 eval "$(starship init bash)"
 

@@ -22,6 +22,9 @@ bindsym $mod+$alt+Shift+p exec "systemctl poweroff"
 
 bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+space exec --no-startup-id dmenu_run -l 25
+bindsym $mod+p exec monitor-layout
+bindsym $mod+o exec audio-sink
+bindsym $mod+i exec pin-selection
 
 bindsym $mod+q kill
 
@@ -40,9 +43,9 @@ bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
 
-bindsym $mod+g focus mode_toggle
-bindsym $mod+o focus parent
-bindsym $mod+i focus child
+bindsym $mod+g       focus mode_toggle
+bindsym $mod+less    focus parent
+bindsym $mod+greater focus child
 
 bindsym $mod+Shift+h move left 20px
 bindsym $mod+Shift+j move down 20px

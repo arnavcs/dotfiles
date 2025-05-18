@@ -1,0 +1,6 @@
+#!/bin/sh
+#
+# requires dmenu, and X11
+
+layout=$(ls $HOME/.screenlayout/ | dmenu -l 20)
+[ -z layout ] || $HOME/.screenlayout/$layout

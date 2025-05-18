@@ -83,8 +83,8 @@
       tty-clock racket ghc haskell-language-server R tinycc gcc lldb gdb ncurses valgrind
       python3 gnumake scrot arandr haskellPackages.pandoc-plot pwgen entr termdown sage
       godot_4 aseprite pulsemixer discord mitscheme starship translate-shell openconnect
-      xournal i3 i3status clojure aria2 pup julia xorg.xev jupyter zip tree mupdf
-      man-pages man-pages-posix obs-studio kdenlive
+      xournal i3 i3status clojure aria2 pup julia xorg.xev jupyter zip tree zathura
+      man-pages man-pages-posix obs-studio kdenlive elmPackages.elm # mupdf
   ];
 
   documentation.dev.enable = true;
